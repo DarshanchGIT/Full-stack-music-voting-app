@@ -1,113 +1,147 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+//@ts-ignore
+import { Users, Play, Share2 } from "lucide-react";
+import { Appbar } from "./components/Appbar";
+import { Redirect } from "./components/Redirect";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100 transition-colors duration-300">
+      <Appbar />
+      <Redirect />
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-gray-900 to-purple-900">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center pl-6">
+              <div className="space-y-4 max-w-3xl mx-auto">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 p-1">
+                  Stream Together, Vibe Together
+                </h1>
+                <p className="text-gray-400 md:text-2xl">
+                  Create a shared music room and let your friends choose the
+                  tunes. The ultimate social listening experience.
+                </p>
+                <p className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                  Welcome to Muzer
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <Users className="h-10 w-10 text-purple-400" />
+                <h2 className="text-xl font-bold">Collaborative Playlists</h2>
+                <p className="text-gray-400">
+                  Create a room and invite friends to add songs to the queue in
+                  real-time.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <Play className="h-10 w-10 text-pink-400" />
+                <h2 className="text-xl font-bold">Synchronized Playback</h2>
+                <p className="text-gray-400">
+                  Everyone in the room hears the same song at the same time,
+                  creating a shared experience.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <Share2 className="h-10 w-10 text-indigo-400" />
+                <h2 className="text-xl font-bold">Easy Sharing</h2>
+                <p className="text-gray-400">
+                  Share your room with a simple link, no sign-up required for
+                  guests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+              How It Works
+            </h2>
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-purple-500 text-3xl font-bold text-white">
+                  1
+                </div>
+                <h3 className="text-xl font-bold">Create a Room</h3>
+                <p className="text-gray-400">
+                  Start a new music room with just a click.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-3xl font-bold text-white">
+                  2
+                </div>
+                <h3 className="text-xl font-bold">Invite Friends</h3>
+                <p className="text-gray-400">
+                  Share the room link with your friends.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500 text-3xl font-bold text-white">
+                  3
+                </div>
+                <h3 className="text-xl font-bold">Enjoy Together</h3>
+                <p className="text-gray-400">
+                  Let everyone add songs and enjoy the music together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                Ready to Get Started?
+              </h2>
+              <p className="mx-auto max-w-[600px] text-gray-400 md:text-xl">
+                Join MusicStream today and start sharing your favorite tunes
+                with friends.
+              </p>
+              <div className="w-full max-w-sm space-y-2">
+                <form className="flex space-x-2">
+                  <Input
+                    className="flex-1 bg-gray-700"
+                    placeholder="Enter your email"
+                    type="email"
+                  />
+                  <Button
+                    type="submit"
+                    className="bg-purple-500 text-white hover:bg-purple-600"
+                  >
+                    Sign Up
+                  </Button>
+                </form>
+                <p className="text-xs text-gray-400">
+                  Start your free trial. No credit card required.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="w-full py-6 px-4 md:px-6 border-t border-gray-800">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-xs text-gray-400">
+            © 2023 MusicStream. All rights reserved.
+          </p>
+          <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
+            <a className="text-xs hover:text-purple-400" href="#">
+              Terms of Service
+            </a>
+            <a className="text-xs hover:text-purple-400" href="#">
+              Privacy
+            </a>
+          </nav>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </footer>
+    </div>
   );
 }
